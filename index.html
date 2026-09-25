@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sienna Laurent | High Fashion Model & Digital Creator</title>
+  
+  <meta name="description" content="Official portfolio and PR collaboration booking platform for Sienna Laurent — International Fashion Model, Beauty Muse, and Digital Influencer represented worldwide.">
+  <meta name="keywords" content="Sienna Laurent, Model Portfolio, Fashion Model, Beauty Model, Influencer Booking, PR Collabs, Agency Comp Card, Runway Model, Vogue Editorial">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#c5a880',
+              light: '#e5cdad',
+              dark: '#9a7b54'
+            },
+            dark: {
+              DEFAULT: '#0a0a0b',
+              surface: '#121215',
+              card: '#18181d'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Italiana"', 'serif'],
+            heading: ['"Syne"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Italiana&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0a0a0b] text-[#f5f2eb] antialiased selection:bg-[#c5a880] selection:text-black">
+
+  <!-- Grain Overlay for Film Texture -->
+  <div class="grain-overlay"></div>
+
+  <!-- Custom Interactive Cursor -->
+  <div id="custom-cursor" class="custom-cursor"></div>
+  <div id="custom-cursor-dot" class="custom-cursor-dot"></div>
+
+  <!-- =========================================================================
+       Navigation Bar
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex flex-col group">
+        <span class="font-display text-2xl tracking-[0.25em] uppercase text-[#f5f2eb] group-hover:text-[#c5a880] transition-colors">
+          Sienna Laurent
+        </span>
+        <span class="text-[9px] uppercase tracking-[0.35em] text-[#a3a19b] font-mono -mt-1">
+          Model & Digital Muse
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.18em] font-sans text-gray-300">
+        <a href="#about" class="desktop-nav-link hover:text-[#c5a880] transition-colors">About</a>
+        <a href="#portfolio" class="desktop-nav-link hover:text-[#c5a880] transition-colors">Portfolio</a>
+        <a href="#comp-card" class="desktop-nav-link hover:text-[#c5a880] transition-colors">Comp Card</a>
+        <a href="#media-kit" class="desktop-nav-link hover:text-[#c5a880] transition-colors">Media Kit</a>
+        <a href="#booking" class="desktop-nav-link hover:text-[#c5a880] transition-colors">PR & Collabs</a>
+      </nav>
+
+      <!-- Action Area -->
+      <div class="hidden lg:flex items-center space-x-6">
+        <!-- Ambient Sound Toggle -->
+        <button id="ambient-sound-toggle" class="flex items-center space-x-2 text-xs text-gray-400 hover:text-[#c5a880] transition-colors py-1.5 px-3 rounded-full border border-white/10 hover:border-[#c5a880]/40">
+          <i data-lucide="volume-x" class="w-3.5 h-3.5 text-[#c5a880]"></i>
+          <span class="text-[10px] uppercase tracking-widest">Sound: Off</span>
+        </button>
+
+        <a href="#booking" class="btn-luxury text-xs !py-2.5 !px-5">
+          <span>Book Talent</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" class="md:hidden text-white p-2 focus:outline-none" aria-label="Open Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="fixed inset-0 bg-[#0a0a0b]/98 z-50 transform translate-x-full transition-transform duration-500 flex flex-col justify-between p-8 md:hidden">
+    <div class="flex items-center justify-between border-b border-white/10 pb-6">
+      <span class="font-display text-xl tracking-[0.2em] uppercase text-white">Sienna Laurent</span>
+      <button id="mobile-drawer-close" class="text-white p-2">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <nav class="flex flex-col space-y-6 text-xl font-serif text-center my-auto">
+      <a href="#about" class="mobile-nav-link text-gray-300 hover:text-[#c5a880] transition-colors">About & Bio</a>
+      <a href="#portfolio" class="mobile-nav-link text-gray-300 hover:text-[#c5a880] transition-colors">Curated Portfolio</a>
+      <a href="#comp-card" class="mobile-nav-link text-gray-300 hover:text-[#c5a880] transition-colors">Agency Comp Card</a>
+      <a href="#media-kit" class="mobile-nav-link text-gray-300 hover:text-[#c5a880] transition-colors">Influencer Media Kit</a>
+      <a href="#booking" class="mobile-nav-link text-gray-300 hover:text-[#c5a880] transition-colors">PR & Collab Booking</a>
+    </nav>
+
+    <div class="border-t border-white/10 pt-6 text-center space-y-4">
+      <a href="#booking" class="btn-luxury w-full text-center py-3">Book Collaboration</a>
+      <p class="text-[11px] text-gray-500 uppercase tracking-widest font-mono">Represented in NY • Paris • London</p>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Hero Section: Cinematic Editorial Intro
+       ========================================================================= -->
+  <section id="hero" class="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    
+    <!-- Hero Background Visual -->
+    <div class="hero-visual-container">
+      <img 
+        src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=90" 
+        alt="Sienna Laurent High Fashion Hero" 
+        class="hero-visual-bg"
+      >
+      <div class="hero-overlay"></div>
+    </div>
+
+    <!-- Hero Content Overlay -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center justify-center pt-12 pb-20">
+      
+      <!-- Live Status Badge -->
+      <div class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 animate-pulse">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="text-[11px] uppercase tracking-[0.25em] text-gray-300 font-mono">
+          Available for Paris FW & FW25 Campaigns
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white tracking-[0.08em] uppercase leading-[0.9] mb-6">
+        Sienna Laurent
+      </h1>
+
+      <!-- Editorial Subtitle -->
+      <p class="font-serif italic text-xl sm:text-2xl md:text-3xl text-gray-300 max-w-2xl mx-auto mb-10 font-light">
+        High Fashion Model, Beauty Face & Digital Creator blending timeless haute couture with modern cultural influence.
+      </p>
+
+      <!-- CTA Pathway Buttons -->
+      <div class="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">
+        <a href="#portfolio" class="btn-luxury w-full sm:w-auto">
+          <span>Explore Works</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#booking" class="btn-outline w-full sm:w-auto">
+          <span>Brand Collabs & PR</span>
+          <i data-lucide="sparkles" class="w-4 h-4 text-[#c5a880]"></i>
+        </a>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 mt-16 pt-10 border-t border-white/10 w-full max-w-4xl text-center">
+        <div>
+          <div class="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-mono mb-1">Height</div>
+          <div class="text-lg font-heading text-white">5'10" / 178cm</div>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-mono mb-1">Audience</div>
+          <div class="text-lg font-heading text-white">920K+ Combined</div>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-mono mb-1">Representation</div>
+          <div class="text-lg font-heading text-white">IMG NY / Elite</div>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-mono mb-1">Location</div>
+          <div class="text-lg font-heading text-white">New York • Paris</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity">
+      <span class="text-[10px] uppercase tracking-[0.3em] font-mono text-gray-400 mb-2">Scroll</span>
+      <div class="w-[1px] h-8 bg-gradient-to-b from-[#c5a880] to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Marquee Banner: High Fashion Credentials
+       ========================================================================= -->
+  <div class="marquee-wrapper">
+    <div class="marquee-content">
+      <span>Vogue Scandinavia</span>
+      <span>Harper’s Bazaar</span>
+      <span>Jacquemus</span>
+      <span>YSL Beauty</span>
+      <span>Chanel Les Beiges</span>
+      <span>Paris Fashion Week</span>
+      <span>Milan Fashion Week</span>
+      <span>Dyson Beauty</span>
+      <span>Revolve</span>
+      <span>Maison Margiela</span>
+    </div>
+    <div class="marquee-content" aria-hidden="true">
+      <span>Vogue Scandinavia</span>
+      <span>Harper’s Bazaar</span>
+      <span>Jacquemus</span>
+      <span>YSL Beauty</span>
+      <span>Chanel Les Beiges</span>
+      <span>Paris Fashion Week</span>
+      <span>Milan Fashion Week</span>
+      <span>Dyson Beauty</span>
+      <span>Revolve</span>
+      <span>Maison Margiela</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       About & Representation Section
+       ========================================================================= -->
+  <section id="about" class="py-28 px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Visual Split: Editorial Portrait Stack -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative z-10 rounded-lg overflow-hidden border border-white/10 shadow-2xl aspect-[3/4]">
+          <img 
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85" 
+            alt="Sienna Laurent Portrait" 
+            class="w-full h-full object-cover"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-[#c5a880] font-mono">Creative Founder</p>
+              <h4 class="font-serif text-xl text-white">Maison Laurent Studio</h4>
+            </div>
+            <span class="text-xs font-mono text-gray-400">Est. 2022</span>
+          </div>
+        </div>
+        <!-- Decorative Offset Frame -->
+        <div class="hidden sm:block absolute -top-4 -left-4 w-full h-full border border-[#c5a880]/30 rounded-lg -z-0 pointer-events-none"></div>
+      </div>
+
+      <!-- Narrative & Background -->
+      <div class="lg:col-span-7 space-y-8">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-[#c5a880] font-mono block mb-2">The Persona</span>
+          <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight font-normal">
+            Where Haute Couture Meets Digital Influence.
+          </h2>
+        </div>
+
+        <p class="text-gray-300 font-sans text-base sm:text-lg leading-relaxed font-light">
+          Sienna Laurent is an internationally published fashion model, beauty face, and creator known for her architectural presence, effortless elegance, and modern multi-channel reach. Having walked for leading European fashion houses and fronted campaigns for premier luxury beauty houses, she brings exceptional versatility from the runway to high-converting social campaigns.
+        </p>
+
+        <p class="text-gray-400 font-sans text-sm sm:text-base leading-relaxed">
+          Through her brand <strong class="text-white font-medium">Maison Laurent</strong>, Sienna bridges high fashion editorial standards with engaging lifestyle and beauty storytelling — offering brands an authentic conduit to hundreds of thousands of affluent, style-conscious consumers worldwide.
+        </p>
+
+        <!-- Representation & Agency Hub -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+          <div class="p-5 rounded-lg bg-[#121215] border border-white/10">
+            <span class="text-xs uppercase tracking-widest text-[#c5a880] font-mono block mb-1">Modeling Representation</span>
+            <div class="font-heading text-lg text-white">IMG Models New York</div>
+            <p class="text-xs text-gray-400 mt-1">Direct Fashion & Editorial Bookings</p>
+          </div>
+          <div class="p-5 rounded-lg bg-[#121215] border border-white/10">
+            <span class="text-xs uppercase tracking-widest text-[#c5a880] font-mono block mb-1">PR & Digital Partnerships</span>
+            <div class="font-heading text-lg text-white">Laurent Talent PR</div>
+            <p class="text-xs text-gray-400 mt-1">Brand Sponsorships & Whitelisting</p>
+          </div>
+        </div>
+
+        <div class="pt-2 flex items-center gap-4">
+          <a href="#comp-card" class="btn-outline text-xs">
+            <span>View Comp Card</span>
+          </a>
+          <a href="#booking" class="btn-luxury text-xs">
+            <span>Request Media Kit & Rate Card</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Curated Portfolio Gallery
+       ========================================================================= -->
+  <section id="portfolio" class="py-24 bg-[#0e0e11] border-t border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-white/10">
+        <div>
+          <span class="text-xs uppercase tracking-[0.25em] text-[#c5a880] font-mono block mb-2">Curated Works</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal">Portfolio Archive</h2>
+        </div>
+        <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0 font-light">
+          Selected magazine covers, commercial beauty campaigns, runway looks, and unretouched agency digitals.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-12">
+        <button class="filter-btn active" data-filter="all">All Works</button>
+        <button class="filter-btn" data-filter="editorial">Editorial & High Fashion</button>
+        <button class="filter-btn" data-filter="beauty">Beauty & Skincare</button>
+        <button class="filter-btn" data-filter="runway">Runway & Motion</button>
+        <button class="filter-btn" data-filter="digitals">Agency Digitals / Polaroids</button>
+        <button class="filter-btn" data-filter="collabs">Brand Collabs & UGC</button>
+      </div>
+
+      <!-- Dynamic Portfolio Grid -->
+      <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Runway & Motion Video Feature Showcase
+       ========================================================================= -->
+  <section class="relative py-28 overflow-hidden bg-black">
+    <div class="absolute inset-0 opacity-40">
+      <img 
+        src="https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=2000&q=85" 
+        alt="Runway Motion Backdrop" 
+        class="w-full h-full object-cover filter blur-[2px]"
+      >
+      <div class="absolute inset-0 bg-black/75"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <span class="text-xs uppercase tracking-[0.3em] text-[#c5a880] font-mono block mb-4">Motion & Catwalk</span>
+      <h2 class="font-display text-4xl sm:text-6xl text-white tracking-wider uppercase mb-6">
+        Runway & Motion Reel
+      </h2>
+      <p class="text-gray-300 font-serif italic text-xl max-w-2xl mx-auto mb-10">
+        Featuring highlights from Paris, Milan, and New York Fashion Weeks, plus commercial video productions.
+      </p>
+
+      <!-- Video Card Preview Frame -->
+      <div class="relative max-w-3xl mx-auto rounded-xl overflow-hidden border border-white/20 shadow-2xl group cursor-pointer aspect-video bg-[#121215]">
+        <img 
+          src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1400&q=85" 
+          alt="Runway Reel Video Thumbnail" 
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        >
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+          <div class="w-20 h-20 rounded-full bg-[#c5a880] text-black flex items-center justify-center pl-1 shadow-2xl group-hover:scale-110 transition-transform">
+            <i data-lucide="play" class="w-8 h-8 fill-current"></i>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center text-xs font-mono text-gray-300 bg-black/60 backdrop-blur-md px-4 py-2 rounded">
+          <span>Runway Reel 2025 • 4K 60FPS</span>
+          <span>Duration: 01:45</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Agency Comp Card (Zed Card)
+       ========================================================================= -->
+  <section id="comp-card" class="py-28 px-6 max-w-7xl mx-auto">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-[0.25em] text-[#c5a880] font-mono block mb-2">Casting & Measurements</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal">Digital Comp Card</h2>
+      </div>
+      
+      <!-- Interactive Controls -->
+      <div class="flex items-center gap-4 mt-6 md:mt-0">
+        <button id="unit-toggle-btn" class="px-4 py-2 rounded-full border border-white/20 text-xs font-mono uppercase tracking-wider text-gray-300 hover:border-[#c5a880] hover:text-[#c5a880] transition-colors">
+          Switch to Metric (CM / EU)
+        </button>
+        <button id="print-comp-card-btn" class="btn-luxury text-xs !py-2 !px-4">
+          <i data-lucide="printer" class="w-4 h-4"></i>
+          <span>Print / Export PDF</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Printable & Interactive Zed Card Layout -->
+    <div id="printable-comp-card" class="bg-[#121215] border border-white/10 rounded-xl overflow-hidden p-6 lg:p-10 shadow-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Main Model Hero Headshot -->
+        <div class="lg:col-span-5">
+          <div class="aspect-[3/4] rounded-lg overflow-hidden border border-white/10 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=85" 
+              alt="Sienna Laurent Main Headshot" 
+              class="w-full h-full object-cover"
+            >
+            <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded text-[11px] font-mono text-[#c5a880]">
+              Headshot • Daylight Unretouched
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Secondary Angles & Stats Table -->
+        <div class="lg:col-span-7 flex flex-col justify-between h-full space-y-6">
+          
+          <div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+              <div>
+                <h3 class="font-display text-3xl sm:text-4xl text-white uppercase tracking-wider">Sienna Laurent</h3>
+                <p class="text-xs uppercase tracking-widest text-[#c5a880] font-mono mt-1">High Fashion & Commercial Division</p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs uppercase tracking-widest text-gray-400 font-mono">Agency Code</span>
+                <p class="font-mono text-sm text-white">IMG-NY-8492</p>
+              </div>
+            </div>
+
+            <!-- Stats Measurement Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 bg-[#18181d] p-5 rounded-lg border border-white/5">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">Height</span>
+                <p id="stat-height" class="font-heading text-lg text-white font-semibold">5'10"</p>
+              </div>
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">Bust</span>
+                <p id="stat-bust" class="font-heading text-lg text-white font-semibold">32"</p>
+              </div>
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">Waist</span>
+                <p id="stat-waist" class="font-heading text-lg text-white font-semibold">24"</p>
+              </div>
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">Hips</span>
+                <p id="stat-hips" class="font-heading text-lg text-white font-semibold">34.5"</p>
+              </div>
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">Shoes</span>
+                <p id="stat-shoes" class="font-heading text-lg text-white font-semibold">8.5 US</p>
+              </div>
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">Dress</span>
+                <p id="stat-dress" class="font-heading text-lg text-white font-semibold">2-4 US</p>
+              </div>
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">Eyes</span>
+                <p class="font-heading text-lg text-white font-semibold">Hazel Green</p>
+              </div>
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">Hair</span>
+                <p class="font-heading text-lg text-white font-semibold">Chestnut Brown</p>
+              </div>
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">Passport</span>
+                <p class="font-heading text-lg text-emerald-400 font-semibold">US / Global Ready</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Comp Card Angles (Profile, Full Length, Editorial) -->
+          <div class="grid grid-cols-3 gap-3">
+            <div class="aspect-[3/4] rounded overflow-hidden border border-white/10">
+              <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=80" alt="Full Length Look" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[3/4] rounded overflow-hidden border border-white/10">
+              <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=500&q=80" alt="Profile Angle" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[3/4] rounded overflow-hidden border border-white/10">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80" alt="Beauty Angle" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-gray-400 font-mono pt-2 border-t border-white/10">
+            <span>Direct Booking: booking@siennalaurent.com</span>
+            <span>Agency: booking@imgmodels.com</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Influencer Media Kit & PR Partnerships Hub
+       ========================================================================= -->
+  <section id="media-kit" class="py-24 bg-[#0d0d10] border-t border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.3em] text-[#c5a880] font-mono block mb-2">Creator Metrics & PR Kit</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal mb-4">Digital Reach & Audience Demographics</h2>
+        <p class="text-gray-400 text-sm sm:text-base font-light">
+          Sienna connects premium beauty, fashion, and luxury lifestyle brands with an ultra-engaged global audience across multiple platforms.
+        </p>
+      </div>
+
+      <!-- Animated Social Stats Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+        
+        <div class="p-8 rounded-xl bg-[#141418] border border-white/10 text-center relative overflow-hidden group hover:border-[#c5a880]/50 transition-colors">
+          <i data-lucide="instagram" class="w-8 h-8 mx-auto text-[#c5a880] mb-4"></i>
+          <div class="font-heading text-4xl text-white font-bold mb-1 stat-counter" data-target="340" data-suffix="K+">0</div>
+          <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">Instagram Followers</p>
+          <span class="text-[11px] text-emerald-400 block mt-2 font-mono">7.8% Engagement Rate</span>
+        </div>
+
+        <div class="p-8 rounded-xl bg-[#141418] border border-white/10 text-center relative overflow-hidden group hover:border-[#c5a880]/50 transition-colors">
+          <i data-lucide="video" class="w-8 h-8 mx-auto text-[#c5a880] mb-4"></i>
+          <div class="font-heading text-4xl text-white font-bold mb-1 stat-counter" data-target="580" data-suffix="K+">0</div>
+          <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">TikTok Community</p>
+          <span class="text-[11px] text-emerald-400 block mt-2 font-mono">14.2M+ Monthly Views</span>
+        </div>
+
+        <div class="p-8 rounded-xl bg-[#141418] border border-white/10 text-center relative overflow-hidden group hover:border-[#c5a880]/50 transition-colors">
+          <i data-lucide="users" class="w-8 h-8 mx-auto text-[#c5a880] mb-4"></i>
+          <div class="font-heading text-4xl text-white font-bold mb-1 stat-counter" data-target="76" data-suffix="%">0</div>
+          <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">Female Demographic</p>
+          <span class="text-[11px] text-gray-400 block mt-2 font-mono">Ages 18–34 Prime</span>
+        </div>
+
+        <div class="p-8 rounded-xl bg-[#141418] border border-white/10 text-center relative overflow-hidden group hover:border-[#c5a880]/50 transition-colors">
+          <i data-lucide="globe" class="w-8 h-8 mx-auto text-[#c5a880] mb-4"></i>
+          <div class="font-heading text-4xl text-white font-bold mb-1 stat-counter" data-target="82" data-suffix="%">0</div>
+          <p class="text-xs uppercase tracking-widest text-gray-400 font-mono">US & Western Europe</p>
+          <span class="text-[11px] text-gray-400 block mt-2 font-mono">NYC • LA • London • Paris</span>
+        </div>
+
+      </div>
+
+      <!-- Collaboration Tiers & Packages -->
+      <div class="mb-12">
+        <h3 class="font-serif text-2xl text-white text-center mb-8">Brand Partnership Packages</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="p-8 rounded-xl bg-[#141418] border border-white/10 flex flex-col justify-between hover:border-[#c5a880]/40 transition-colors">
+            <div>
+              <span class="text-xs uppercase tracking-widest text-[#c5a880] font-mono">Tier 01</span>
+              <h4 class="font-heading text-xl text-white mt-1 mb-3">Sponsored Content & Reels</h4>
+              <p class="text-xs text-gray-400 mb-6">High-production editorial reel + TikTok, organic integration, story series, and 30-day organic link-in-bio.</p>
+              <ul class="space-y-2 text-xs text-gray-300">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c5a880]"></i> 1x 4K Cinematic Reel (IG + TikTok)</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c5a880]"></i> 3x Story Frame Sequence + Swipe-Up</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c5a880]"></i> High-res still assets for brand social</li>
+              </ul>
+            </div>
+            <a href="#booking" class="btn-outline text-xs mt-8 text-center">Select Package</a>
+          </div>
+
+          <div class="p-8 rounded-xl bg-[#181820] border-2 border-[#c5a880] flex flex-col justify-between relative shadow-2xl">
+            <div class="absolute -top-3 right-6 bg-[#c5a880] text-black text-[10px] font-mono uppercase tracking-widest font-bold px-3 py-0.5 rounded-full">
+              Most Popular
+            </div>
+            <div>
+              <span class="text-xs uppercase tracking-widest text-[#c5a880] font-mono">Tier 02</span>
+              <h4 class="font-heading text-xl text-white mt-1 mb-3">Full Campaign & Whitelisting</h4>
+              <p class="text-xs text-gray-400 mb-6">Complete on-location photoshoot, video ad deliverables, Spark Ads whitelisting code, and paid media rights.</p>
+              <ul class="space-y-2 text-xs text-gray-300">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c5a880]"></i> 2x Dedicated Reels + UGC Cutdowns</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c5a880]"></i> 60-Day Meta / TikTok Whitelisting Code</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c5a880]"></i> Global Digital Commercial Usage Rights</li>
+              </ul>
+            </div>
+            <a href="#booking" class="btn-luxury text-xs mt-8 text-center">Select Package</a>
+          </div>
+
+          <div class="p-8 rounded-xl bg-[#141418] border border-white/10 flex flex-col justify-between hover:border-[#c5a880]/40 transition-colors">
+            <div>
+              <span class="text-xs uppercase tracking-widest text-[#c5a880] font-mono">Tier 03</span>
+              <h4 class="font-heading text-xl text-white mt-1 mb-3">Ambassador & VIP Events</h4>
+              <p class="text-xs text-gray-400 mb-6">Long-term brand ambassadorship, runway appearances, red carpet attendance, and global exclusivity.</p>
+              <ul class="space-y-2 text-xs text-gray-300">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c5a880]"></i> Multi-month content exclusivity</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c5a880]"></i> Event Hosting / Red Carpet Appearance</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c5a880]"></i> Print & Billboard Licensing Options</li>
+              </ul>
+            </div>
+            <a href="#booking" class="btn-outline text-xs mt-8 text-center">Select Package</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Interactive PR & Collab Booking Engine
+       ========================================================================= -->
+  <section id="booking" class="py-28 px-6 max-w-5xl mx-auto">
+    
+    <div class="text-center mb-12">
+      <span class="text-xs uppercase tracking-[0.3em] text-[#c5a880] font-mono block mb-2">Direct Representation & Inquiries</span>
+      <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal mb-3">Book Sienna Laurent</h2>
+      <p class="text-gray-400 text-sm max-w-xl mx-auto font-light">
+        Configure your project details, request collaboration terms, or inquire about runway, campaign, and digital PR partnerships.
+      </p>
+    </div>
+
+    <!-- Stepper Progress Bar -->
+    <div class="flex items-center justify-between max-w-md mx-auto mb-10 relative">
+      <div class="absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -z-0"></div>
+      <div id="step-dot-1" class="step-dot active relative z-10">1</div>
+      <div id="step-dot-2" class="step-dot relative z-10">2</div>
+      <div id="step-dot-3" class="step-dot relative z-10">3</div>
+      <div id="step-dot-4" class="step-dot relative z-10">4</div>
+    </div>
+
+    <!-- Booking Form Container -->
+    <div class="bg-[#121215] border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl">
+      
+      <!-- STEP 1: Collaboration Type -->
+      <div id="booking-step-1" class="space-y-6">
+        <div>
+          <h3 class="font-serif text-2xl text-white mb-1">Step 1: Select Collaboration Format</h3>
+          <p class="text-xs text-gray-400">Choose the primary nature of the booking or PR initiative.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="form-option-card collab-type-card selected" data-value="Editorial & Fashion Campaign">
+            <div class="flex items-center justify-between mb-2">
+              <i data-lucide="camera" class="w-5 h-5 text-[#c5a880]"></i>
+              <span class="text-[10px] uppercase font-mono text-[#c5a880]">Commercial / Print</span>
+            </div>
+            <h4 class="font-heading text-white text-base mb-1">Editorial & Fashion Campaign</h4>
+            <p class="text-xs text-gray-400">High-fashion photoshoot, lookbooks, e-commerce, and magazine editorial.</p>
+          </div>
+
+          <div class="form-option-card collab-type-card" data-value="Digital Creator & UGC Whitelisting">
+            <div class="flex items-center justify-between mb-2">
+              <i data-lucide="sparkles" class="w-5 h-5 text-[#c5a880]"></i>
+              <span class="text-[10px] uppercase font-mono text-[#c5a880]">Social Influencer</span>
+            </div>
+            <h4 class="font-heading text-white text-base mb-1">Digital Creator & Whitelisting</h4>
+            <p class="text-xs text-gray-400">Sponsored Reels, TikTok campaigns, dedicated reviews, and Spark Ads code.</p>
+          </div>
+
+          <div class="form-option-card collab-type-card" data-value="Runway & Fashion Week Booking">
+            <div class="flex items-center justify-between mb-2">
+              <i data-lucide="footprints" class="w-5 h-5 text-[#c5a880]"></i>
+              <span class="text-[10px] uppercase font-mono text-[#c5a880]">Catwalk / Live</span>
+            </div>
+            <h4 class="font-heading text-white text-base mb-1">Runway & Fashion Week</h4>
+            <p class="text-xs text-gray-400">NYFW, PFW, MFW catwalk shows, presentation fittings, and showroom modeling.</p>
+          </div>
+
+          <div class="form-option-card collab-type-card" data-value="PR Gifting & Brand Ambassadorship">
+            <div class="flex items-center justify-between mb-2">
+              <i data-lucide="gift" class="w-5 h-5 text-[#c5a880]"></i>
+              <span class="text-[10px] uppercase font-mono text-[#c5a880]">PR / Gifting</span>
+            </div>
+            <h4 class="font-heading text-white text-base mb-1">PR Gifting & Ambassador</h4>
+            <p class="text-xs text-gray-400">Product seeding, unboxing consideration, event VIP guest, long-term brand muse.</p>
+          </div>
+        </div>
+
+        <div class="pt-4 flex justify-end">
+          <button id="next-step-1" class="btn-luxury text-xs">
+            <span>Continue to Deliverables</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Deliverables & Usage Rights -->
+      <div id="booking-step-2" class="hidden space-y-6">
+        <div>
+          <h3 class="font-serif text-2xl text-white mb-1">Step 2: Deliverables & Media Usage</h3>
+          <p class="text-xs text-gray-400">Select required assets and licensing rights scope.</p>
+        </div>
+
+        <div class="space-y-3">
+          <label class="flex items-center p-4 rounded-lg bg-[#18181d] border border-white/5 cursor-pointer hover:border-[#c5a880]/30 transition-colors">
+            <input type="checkbox" value="Instagram Reel / TikTok" class="deliverable-checkbox mr-4 accent-[#c5a880] w-4 h-4" checked>
+            <div>
+              <div class="text-sm font-medium text-white">Dedicated 4K Reel / TikTok Video</div>
+              <div class="text-xs text-gray-400">High-aesthetic organic feed post featuring product in use.</div>
+            </div>
+          </label>
+
+          <label class="flex items-center p-4 rounded-lg bg-[#18181d] border border-white/5 cursor-pointer hover:border-[#c5a880]/30 transition-colors">
+            <input type="checkbox" value="Whitelisting Rights (30 Days)" class="deliverable-checkbox mr-4 accent-[#c5a880] w-4 h-4" checked>
+            <div>
+              <div class="text-sm font-medium text-white">Paid Media Whitelisting (30 Days)</div>
+              <div class="text-xs text-gray-400">Allows your brand to run ad spend behind Sienna's creator handles.</div>
+            </div>
+          </label>
+
+          <label class="flex items-center p-4 rounded-lg bg-[#18181d] border border-white/5 cursor-pointer hover:border-[#c5a880]/30 transition-colors">
+            <input type="checkbox" value="High-Res Stills Package (5 Photos)" class="deliverable-checkbox mr-4 accent-[#c5a880] w-4 h-4">
+            <div>
+              <div class="text-sm font-medium text-white">High-Resolution Commercial Still Assets (5 Photos)</div>
+              <div class="text-xs text-gray-400">Retouched imagery for brand digital advertising, newsletter, and website.</div>
+            </div>
+          </label>
+
+          <label class="flex items-center p-4 rounded-lg bg-[#18181d] border border-white/5 cursor-pointer hover:border-[#c5a880]/30 transition-colors">
+            <input type="checkbox" value="Global Exclusivity (Fashion/Beauty 60d)" class="deliverable-checkbox mr-4 accent-[#c5a880] w-4 h-4">
+            <div>
+              <div class="text-sm font-medium text-white">Category Exclusivity (60 Days)</div>
+              <div class="text-xs text-gray-400">Restricts competing brands in your vertical during the campaign flight.</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="pt-4 flex justify-between">
+          <button id="prev-step-2" class="btn-outline text-xs">Back</button>
+          <button id="next-step-2" class="btn-luxury text-xs">
+            <span>Continue to Project Details</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Brand Profile & Timeline -->
+      <div id="booking-step-3" class="hidden space-y-6">
+        <div>
+          <h3 class="font-serif text-2xl text-white mb-1">Step 3: Brand & Project Details</h3>
+          <p class="text-xs text-gray-400">Provide company information and target schedule.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-gray-400 font-mono mb-2">Brand / Agency Name *</label>
+            <input type="text" id="input-brand-name" placeholder="e.g. Jacquemus / YSL / Agency" class="w-full bg-[#18181d] border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-[#c5a880]" required>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-gray-400 font-mono mb-2">Contact Email *</label>
+            <input type="email" id="input-email" placeholder="contact@brand.com" class="w-full bg-[#18181d] border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-[#c5a880]" required>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-gray-400 font-mono mb-2">Target Date / Shoot Window</label>
+            <input type="text" id="input-target-date" placeholder="e.g. October 15–20, 2025" class="w-full bg-[#18181d] border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-[#c5a880]">
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-gray-400 font-mono mb-2">Budget Bracket</label>
+            <select id="select-budget-tier" class="w-full bg-[#18181d] border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-[#c5a880]">
+              <option value="$3,500 – $7,500">$3,500 – $7,500 (Standard Creator)</option>
+              <option value="$7,500 – $15,000" selected>$7,500 – $15,000 (Campaign & Whitelisting)</option>
+              <option value="$15,000 – $30,000+">$15,000 – $30,000+ (High Fashion / Runway / Ambassador)</option>
+              <option value="PR Gifting / Product Seeding Only">PR Gifting / Product Seeding Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase tracking-wider text-gray-400 font-mono mb-2">Project Notes & Moodboard Link</label>
+          <textarea id="input-notes" rows="3" placeholder="Brief description of the shoot concept, moodboard URL, usage requirements..." class="w-full bg-[#18181d] border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-[#c5a880]"></textarea>
+        </div>
+
+        <div class="pt-4 flex justify-between">
+          <button id="prev-step-3" class="btn-outline text-xs">Back</button>
+          <button id="next-step-3" class="btn-luxury text-xs">
+            <span>Review Estimate & Submit</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Live Estimate & Instant Submission -->
+      <div id="booking-step-4" class="hidden space-y-6">
+        <div>
+          <h3 class="font-serif text-2xl text-white mb-1">Step 4: Review Booking Summary</h3>
+          <p class="text-xs text-gray-400">Review your generated collaboration outline before dispatching to Sienna's booking desk.</p>
+        </div>
+
+        <div class="bg-[#18181d] rounded-xl p-6 border border-white/10 space-y-4">
+          <div class="flex justify-between items-center border-b border-white/5 pb-3">
+            <span class="text-xs uppercase text-gray-400 font-mono">Format</span>
+            <span id="summary-collab-type" class="text-sm font-heading text-white">Editorial & Fashion Campaign</span>
+          </div>
+
+          <div class="flex justify-between items-center border-b border-white/5 pb-3">
+            <span class="text-xs uppercase text-gray-400 font-mono">Selected Deliverables</span>
+            <span id="summary-deliverables" class="text-xs font-mono text-gray-200 text-right max-w-xs">Instagram Reel + Whitelisting</span>
+          </div>
+
+          <div class="flex justify-between items-center border-b border-white/5 pb-3">
+            <span class="text-xs uppercase text-gray-400 font-mono">Budget Allocation</span>
+            <span id="summary-budget" class="text-sm font-mono text-[#c5a880]">$7,500 – $15,000</span>
+          </div>
+
+          <div class="flex justify-between items-center pt-2">
+            <div>
+              <span class="text-xs uppercase text-gray-400 font-mono block">Estimated Booking Bracket</span>
+              <span class="text-[10px] text-gray-500">Subject to agency review & usage scope</span>
+            </div>
+            <span id="summary-estimated-fee" class="text-xl font-heading text-[#c5a880] font-bold">$9,700 – $13,000</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-lg bg-[#c5a880]/10 border border-[#c5a880]/30 text-xs text-gray-300 flex items-start gap-3">
+          <i data-lucide="shield-check" class="w-5 h-5 text-[#c5a880] shrink-0 mt-0.5"></i>
+          <div>
+            <strong>Agency Verified Inquiries:</strong> Direct response provided within 24 business hours. Formal call sheets, travel rider (if applicable), and contracts are managed through IMG Models NY / Laurent Talent PR.
+          </div>
+        </div>
+
+        <div class="pt-4 flex justify-between">
+          <button id="prev-step-4" class="btn-outline text-xs">Back to Edit</button>
+          <button id="submit-booking-btn" class="btn-luxury text-xs">
+            <span>Send Direct Booking Inquiry</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Footer & Agency Representation Contacts
+       ========================================================================= -->
+  <footer class="bg-[#070708] border-t border-white/10 pt-20 pb-12 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+      
+      <!-- Brand & Mission -->
+      <div class="md:col-span-4 space-y-4">
+        <span class="font-display text-2xl tracking-[0.2em] uppercase text-white">Sienna Laurent</span>
+        <p class="text-xs text-gray-400 font-light leading-relaxed">
+          High Fashion Model, Beauty Face & Digital Creator represented internationally across New York, Paris, London, and Milan.
+        </p>
+        <div class="flex items-center space-x-4 pt-2">
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#c5a880] hover:border-[#c5a880]/40 transition-colors">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#c5a880] hover:border-[#c5a880]/40 transition-colors">
+            <i data-lucide="video" class="w-4 h-4"></i>
+          </a>
+          <a href="https://models.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#c5a880] hover:border-[#c5a880]/40 transition-colors">
+            <i data-lucide="globe" class="w-4 h-4"></i>
+          </a>
+          <a href="mailto:booking@siennalaurent.com" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#c5a880] hover:border-[#c5a880]/40 transition-colors">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Representation Contacts -->
+      <div class="md:col-span-4 space-y-3">
+        <h4 class="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-mono">Agency Representation</h4>
+        <div class="space-y-3 text-xs text-gray-400">
+          <div>
+            <strong class="text-white block font-medium">IMG Models New York (Editorial & Runway)</strong>
+            <span class="font-mono text-gray-500">ny@imgmodels.com • +1 (212) 555-0199</span>
+          </div>
+          <div>
+            <strong class="text-white block font-medium">Elite Paris (Europe Bookings)</strong>
+            <span class="font-mono text-gray-500">paris@elitemodel.fr • +33 1 40 44 32 00</span>
+          </div>
+          <div>
+            <strong class="text-white block font-medium">Laurent Talent PR & Digital Desk</strong>
+            <span class="font-mono text-gray-500">pr@maisonlaurent.com • brand@siennalaurent.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Nav & Newsletter -->
+      <div class="md:col-span-4 space-y-4">
+        <h4 class="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-mono">Casting Directors Bulletin</h4>
+        <p class="text-xs text-gray-400 leading-relaxed font-light">
+          Subscribe for quarterly portfolio lookbooks, seasonal availability updates, and casting digitals.
+        </p>
+        <form onsubmit="event.preventDefault(); alert('Subscribed to Sienna Laurent Casting Updates!');" class="flex gap-2">
+          <input type="email" placeholder="casting@agency.com" class="bg-[#121215] border border-white/10 rounded px-3 py-2 text-xs text-white flex-1 focus:outline-none focus:border-[#c5a880]" required>
+          <button type="submit" class="btn-luxury text-xs !py-2 !px-4">Join</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-600 font-mono">
+      <p>© 2025–2026 Sienna Laurent & Maison Laurent Studio. All Rights Reserved.</p>
+      <p class="mt-2 sm:mt-0">Designed for Haute Couture & Influencer PR Excellence</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Fullscreen Lightbox Modal
+       ========================================================================= -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <!-- Close Button -->
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white/80 hover:text-white p-2 z-50 transition-colors" aria-label="Close Lightbox">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+
+    <!-- Navigation Arrows -->
+    <button id="lightbox-prev" class="absolute left-6 top-1/2 -translate-y-1/2 text-white/60 hover:text-white p-3 z-50 transition-colors" aria-label="Previous">
+      <i data-lucide="chevron-left" class="w-10 h-10"></i>
+    </button>
+
+    <button id="lightbox-next" class="absolute right-6 top-1/2 -translate-y-1/2 text-white/60 hover:text-white p-3 z-50 transition-colors" aria-label="Next">
+      <i data-lucide="chevron-right" class="w-10 h-10"></i>
+    </button>
+
+    <!-- Content Wrapper -->
+    <div class="max-w-6xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-h-[90vh]">
+      
+      <!-- Lightbox Main Image -->
+      <div class="lg:col-span-8 flex items-center justify-center max-h-[75vh]">
+        <img id="lightbox-image" src="" alt="" class="max-h-[75vh] w-auto max-w-full object-contain rounded-lg shadow-2xl border border-white/10">
+      </div>
+
+      <!-- Lightbox Metadata Sidebar -->
+      <div class="lg:col-span-4 space-y-6 text-left bg-[#121215]/90 p-8 rounded-xl border border-white/10 backdrop-blur-md">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span id="lightbox-category" class="text-xs uppercase tracking-[0.2em] text-[#c5a880] font-mono">EDITORIAL</span>
+            <span id="lightbox-counter" class="text-xs font-mono text-gray-500">1 / 9</span>
+          </div>
+          <h3 id="lightbox-title" class="font-serif text-2xl text-white font-normal mb-2">Project Title</h3>
+          <p id="lightbox-desc" class="text-xs text-gray-400 leading-relaxed">Description goes here.</p>
+        </div>
+
+        <div class="space-y-2 border-t border-white/10 pt-4 text-xs">
+          <div class="flex justify-between"><span class="text-gray-500">Client / Publication:</span> <span id="lightbox-client" class="text-white font-medium">Vogue</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Role:</span> <span id="lightbox-role" class="text-white font-medium">Lead Model</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Photographer:</span> <span id="lightbox-photographer" class="text-white font-medium">Elena Rostova</span></div>
+          <div class="flex justify-between"><span class="text-gray-500">Production Year:</span> <span id="lightbox-year" class="text-white font-medium">2025</span></div>
+        </div>
+
+        <div class="pt-2">
+          <a href="#booking" onclick="closeLightbox()" class="btn-luxury w-full text-center text-xs">Inquire for Similar Campaign</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Lucide Icon Renderer & App Script -->
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

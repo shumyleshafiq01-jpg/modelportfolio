@@ -1,0 +1,486 @@
+/* ==========================================================================
+   Sienna Laurent | Aesthetic Model Portfolio & PR Booking Platform
+   Typography, Animations, Glassmorphism, Print Layout & Themes
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Italiana&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #121215;
+  --bg-card: rgba(22, 22, 26, 0.65);
+  --bg-card-hover: rgba(30, 30, 36, 0.85);
+  
+  --text-primary: #f5f2eb;
+  --text-secondary: #a3a19b;
+  --text-muted: #6b6965;
+  
+  --gold-accent: #c5a880;
+  --gold-light: #e5cdad;
+  --gold-glow: rgba(197, 168, 128, 0.25);
+  
+  --border-subtle: rgba(245, 242, 235, 0.08);
+  --border-active: rgba(197, 168, 128, 0.35);
+  
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Italiana', serif;
+  --font-heading: 'Syne', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Styles & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Grain Overlay for Editorial Film Texture */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Custom Interactive Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(197, 168, 128, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-cinematic), height 0.3s var(--ease-cinematic), background-color 0.3s, border-color 0.3s;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background-color: var(--gold-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease;
+}
+
+.custom-cursor.hovered {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(197, 168, 128, 0.15);
+  border-color: var(--gold-light);
+}
+
+@media (pointer: coarse) {
+  .custom-cursor, .custom-cursor-dot {
+    display: none;
+  }
+}
+
+/* Typography Utility Classes */
+.font-serif { font-family: var(--font-serif); }
+.font-display { font-family: var(--font-display); }
+.font-heading { font-family: var(--font-heading); }
+.font-sans { font-family: var(--font-sans); }
+
+.text-gold { color: var(--gold-accent); }
+.text-gold-light { color: var(--gold-light); }
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.glass-nav {
+  background: rgba(10, 10, 11, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Cinematic Button Styles */
+.btn-luxury {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bg-primary);
+  background-color: var(--gold-accent);
+  border: 1px solid var(--gold-accent);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-cinematic);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-luxury:hover {
+  background-color: #d6bb96;
+  border-color: #d6bb96;
+  box-shadow: 0 0 25px var(--gold-glow);
+  transform: translateY(-2px);
+}
+
+.btn-luxury:hover::before {
+  left: 100%;
+}
+
+.btn-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  background-color: transparent;
+  border: 1px solid rgba(245, 242, 235, 0.2);
+  border-radius: 4px;
+  transition: all 0.4s var(--ease-cinematic);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold-accent);
+  color: var(--gold-light);
+  background: rgba(197, 168, 128, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Hero Cinematic Video/Image Styling */
+.hero-visual-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-visual-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 1.2s var(--ease-cinematic);
+  filter: brightness(0.65) contrast(1.1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 11, 0.4) 0%,
+    rgba(10, 10, 11, 0.6) 50%,
+    rgba(10, 10, 11, 0.98) 100%
+  );
+  z-index: 2;
+}
+
+/* Horizontal Marquee Banner */
+.marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  user-select: none;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.25rem 0;
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  animation: marquee-slide 30s linear infinite;
+}
+
+.marquee-content span {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 0 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.marquee-content span::after {
+  content: '◆';
+  font-size: 0.65rem;
+  color: var(--gold-accent);
+}
+
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Portfolio Grid & Card Micro-Interactions */
+.portfolio-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  cursor: pointer;
+  group: true;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-cinematic), filter 0.8s var(--ease-cinematic);
+}
+
+.portfolio-card:hover .portfolio-img {
+  transform: scale(1.06);
+  filter: brightness(0.85);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 11, 0.9) 0%,
+    rgba(10, 10, 11, 0.4) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-cinematic);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.75rem;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Category Filter Tabs */
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  transition: all 0.3s var(--ease-cinematic);
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(245, 242, 235, 0.15);
+}
+
+.filter-btn.active {
+  color: var(--bg-primary);
+  background: var(--gold-accent);
+  border-color: var(--gold-accent);
+  font-weight: 600;
+}
+
+/* Interactive Comp Card (Zed Card) Styling */
+.comp-card-container {
+  background: #ffffff;
+  color: #111111;
+  border-radius: 4px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.comp-card-container:hover {
+  transform: translateY(-4px);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 6, 0.96);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  z-index: 100000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Booking Form Interactive Steps */
+.step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(245, 242, 235, 0.08);
+  border: 1px solid rgba(245, 242, 235, 0.15);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step-dot.active {
+  background: var(--gold-accent);
+  border-color: var(--gold-accent);
+  color: var(--bg-primary);
+  box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.step-dot.completed {
+  background: #2a2a32;
+  border-color: var(--gold-accent);
+  color: var(--gold-accent);
+}
+
+.form-option-card {
+  border: 1px solid var(--border-subtle);
+  background: rgba(22, 22, 26, 0.5);
+  border-radius: 8px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.form-option-card:hover {
+  border-color: rgba(197, 168, 128, 0.4);
+  background: rgba(30, 30, 36, 0.7);
+}
+
+.form-option-card.selected {
+  border-color: var(--gold-accent);
+  background: rgba(197, 168, 128, 0.08);
+  box-shadow: inset 0 0 0 1px var(--gold-accent);
+}
+
+/* Smooth Scroll-Triggered Reveal Animations */
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-cinematic), transform 0.8s var(--ease-cinematic);
+}
+
+.reveal-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Print Styles for Digital Comp Card */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-comp-card, #printable-comp-card * {
+    visibility: visible;
+  }
+  #printable-comp-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 168, 128, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-accent);
+}
